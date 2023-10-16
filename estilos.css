@@ -1,0 +1,164 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+/*------estilos de laventana donde pide nombre----------*/
+
+.section_main_container {
+  margin-top: 60px;
+  background-image: url(./assets/5ddc68170e4d9bb82fbf8194ad5a09ac.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+/*---------estilos de la ventana modal----------*/
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  opacity: 0;
+
+  pointer-events: none;
+  transition: opacity 0.5s;
+}
+
+.modal--show {
+  opacity: 1;
+  pointer-events: unset;
+  transition: opacity 0.5s;
+}
+
+.modal__container {
+  margin: auto;
+  width: 90%;
+  max-width: 600px;
+  height: 70%;
+  background-image: url(./assets/modal.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-radius: 6px;
+  padding: 3em 2.5em;
+}
+
+/*---------estilos de las cards------------*/
+.cards-grid {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.cards {
+  display: flex;
+  justify-content: center;
+  gap: 150px;
+}
+
+.card {
+  width: 340px;
+  height: 480px;
+  background-color: #fff;
+}
+
+.face {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  backface-visibility: hidden;
+  border-radius: 15px;
+  transition: 1s;
+}
+
+.front {
+  transform: perspective(600px) retateY(0deg);
+  box-shadow: 0 8px 10px #000;
+}
+
+.front p {
+  color: black;
+}
+
+.back {
+  transform: perspective(600px) rotateY(180deg);
+  color: #1a1919;
+
+  flex-direction: column;
+  text-align: center;
+  box-shadow: 0 8px 10px #000;
+}
+
+.card:hover .front {
+  transform: perspective(600px) rotateY(180deg);
+}
+
+.card:hover .back {
+  transform: perspective(600px) rotateY(360deg);
+}
+
+.chico_bueno {
+  background-image: url(./assets/chicoLindo.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.chico_malo {
+  background-image: url(./assets/villano.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.profesor {
+  background-image: url(./assets/profesor.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+/*estilos de la ventana modal de las funciiones de los personajes*/
+
+.modalContainer {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  padding-top: 100px;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 550px;
+  overflow: hidden;
+}
+
+.modalContainer .modal-content {
+  background-color: #151616;
+  margin: auto;
+  padding: 25px;
+  border: 1px solid #6927a7;
+  width: 60%;
+  height: inherit;
+}
+
+.modalContainer .modal-content h2,
+p {
+  color: #fff;
+}
+
+.modalContainer .close {
+  color: #ffffff;
+  float: right;
+  font-size: 1.3rem;
+  font-weight: bold;
+}
+
+.modalContainer .close:hover,
+.close:focus {
+  color: #e63e3eaf;
+  text-decoration: none;
+  cursor: pointer;
+}
